@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    /* styles.css */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: sans-serif;
+        background-color: #0f172a;
+        color: white;
+        height: 100vh; /* Ensures full screen height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    h1 {
+        background-image: linear-gradient(to right, #0ea5e9, #10b981);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 450px; /* Adjust max-width to control the form size */
+        padding: 20px;
+        background-color: #1f2937;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        margin-bottom: 30px; /* Adds gap between the heading and the form */
+    }
+
+    .inputs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Adjusted gap between input fields */
+    }
+
+    .inputs > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    input {
+        margin-top: 8px;
+        margin-bottom: 5px;
+        padding: 10px;
+        font-size: large;
+        background-color: #262626;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    input:focus-visible {
+        outline: 2px solid #ec4899;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    button {
+        display: block;
+        cursor: pointer;
+        border: none;
+        margin-top: 20px; /* Adds space above the button */
+    }
+
+    #submit {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-image: linear-gradient(to right, #ec4899, #8b5cf6);
+        font-size: 1.3rem;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        transition: scale 0.3s ease-in-out;
+    }
+
+    #submit:hover {
+        scale: 1.02;
+    }
+
+    .signup {
+        font-size: 17px;
+        text-align: center;
+        margin-top: 15px; /* Adds space between form and signup text */
+    }
+
+    .signup a {
+        color: #ec4899;
+        text-decoration: none;
+    }
+
+    .signup a:hover {
+        text-decoration: underline;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+  </style>
+  <title>Register | budgetPlan</title>
+</head>
+<body>
+  <div class="app">
+    <div class="registration form">
+      <h1>Register</h1>
+      <form action="/register" method="post">
+        <div class="inputs">
+          <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email">
+          </div>
+          <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter your username">
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Create a password">
+          </div>
+        </div>
+        <div id="invalid"></div>
+        <button id="submit" type="submit">Signup</button>
+      </form>
+      <div class="signup">
+        <span>Already have an account? <a href="/login">Login</a></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
